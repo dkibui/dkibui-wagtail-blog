@@ -1,0 +1,141 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./static/scss/main.scss ***!
+  \****************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap);
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./static/scss/main.scss (1) ***!
+  \********************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap);
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./static/scss/main.scss (2) ***!
+  \********************************************************************************************************************/
+.date {
+  color: #AFAAB9;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.title {
+  margin: 0.25rem 0;
+  font-size: 1.5rem;
+  color: #AFAAB9;
+}
+
+* {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", ui-system, sans-serif;
+}
+
+.blog-body .heading {
+  font-size: 1.2rem;
+  color: #2e294e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #2e294e;
+  margin-bottom: 0.325rem;
+}
+
+h2 {
+  color: #1ea896;
+}
+
+.width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.blog-img img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+  /*width: 100%;*/
+  max-width: 100%;
+  height: auto;
+}
+
+.caption {
+  font-size: small;
+  color: #cccccc;
+  margin-top: 8px;
+}
+
+.blog-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.authors ul {
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.authors li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-size: small;
+  color: rgba(46, 54, 77, 0.5);
+  flex-wrap: wrap;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.authors li img {
+  display: block;
+  border-radius: 50%;
+}
+
+.carousel-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 1.725rem;
+}
+
+@media (min-width: 680px) {
+  body {
+    font-size: 108%;
+    line-height: 1.7;
+  }
+  .carousel-container {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 1.5rem;
+    padding-bottom: 2.525rem;
+  }
+}
+@media (min-width: 960px) {
+  body {
+    font-size: 111%;
+    line-height: 1.7;
+  }
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  padding: 0;
+}
+
+/*# sourceMappingURL=main.css.map*/

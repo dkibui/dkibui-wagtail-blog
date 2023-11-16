@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <article>
+        <header>
+            <h1>{{ page.title }}</h1>
+            <p class="meta">
+                {{ page.date }} |
+                {% for author in page.authors.all %}
+                    {{ author }}
+                    {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+        </header>
+
+        <section class="intro">{{ page.intro }}</section>
+
+        {% for block in self.value %}
+            {% if block.block_type == "heading" %}
+                <h2>{{ block.value }}</h2>
+            {% elif block.block_type == "text" %}
+                <div class="text-block">{{ block.value }}</div>
+            {% elif block.block_type == "image_carousel" %}
+                <div class="image-carousel">
+                    {% for image in block.value %}
+                        <img src="{{ image.url }}" alt="">
+                    {% endfor %}
+                </div>
+            {% elif block.block_type == "bullet_list" %}
+                <ul>
+                    {% for item in block.value %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% elif block.block_type == "image_with_caption" %}
+                {% for image_with_caption in block.value %}
+                    {% include 'blocks/image_with_caption_block.html' with self=image_with_caption %}
+                {% endfor %}
+            {% elif block.block_type == "quote" %}
+                {% include 'blocks/quote_block.html' with self=block %}
+            {% endif %}
+        {% endfor %}
+
+        {% if page.main_image %}
+            <img src="{{ page.main_image.url }}" alt="">
+        {% endif %}
+
+    </article>
+{% endblock %}

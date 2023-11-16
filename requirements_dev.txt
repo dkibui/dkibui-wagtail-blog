@@ -1,0 +1,10 @@
+-r requirements.txt
+-r requirements_lint.txt
+
+django-debug-toolbar
+django-extensions
+django-webtest
+factory-boy
+freezegun
+pytest-django
+wagtail-factories

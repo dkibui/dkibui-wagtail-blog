@@ -1,0 +1,29 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% if block.block_type == 'text' %}
+    <div class="rich-text">
+        {{ block.value | richtext }}
+    </div>
+{% elif block.block_type == 'image_carousel' %}
+    <div class="image-carousel">
+        {% for image in block.value %}
+            <img src="{{ image.image.url }}" alt="{{ image.alt }}">
+        {% endfor %}
+    </div>
+{% elif block.block_type == 'bullet_list' %}
+    <ul>
+        {% for item in block.value %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% elif block.block_type == 'image_with_caption' %}
+    <div class="image-with-caption">
+        {% for image in block.value %}
+            <img src="{{ image.image.url }}" alt="{{ image.alt }}">
+            <p>{{ image.caption }}</p>
+        {% endfor %}
+    </div>
+{% elif block.block_type == 'quote' %}
+    {% include_block block %}
+{#    <blockquote>{{ block.value }}</blockquote>#}
+{% endif %}

@@ -1,0 +1,11 @@
+{% with blocks = page.body %}
+    {% for block in blocks %}
+        {% if block.block_type == "text" %}
+            {{ block.value }}
+        {% elif block.block_type == "heading" %}
+            {{ block.value }}
+        {% elif block.block_type == "image_carousel" %}
+            {% include "includes/image_carousel.html" with block=block only %}
+        {% endif %}
+    {% endfor %}
+{% endwith %}

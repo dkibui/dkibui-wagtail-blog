@@ -1,0 +1,6 @@
+{% load wagtailimages_tags %}
+
+{% for item in block.value %}
+	{% image item fill-800x600 as img %}
+    <img src="{{ img.url }}" alt="{{ img.alt }}">
+{% endfor %}

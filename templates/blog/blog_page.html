@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <article class="width blog-body">
+        <header>
+            <h1 class="">{{ page.blog_title }}</h1>
+            <div class="authors">
+                <span class="date">Published on {{ page.date }}</span>
+                <ul>
+                    {% for author in page.authors.all %}
+                        <li>
+                            <span>{% image author.author_image fill-36x36 %}</span>
+                            <span>{{ author.name }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </header>
+{#        <div>#}
+{#            {% include block %}#}
+{#        </div>#}
+        <div class="">
+            {% for block in page.body %}
+                {% include "blocks/body_block.html" %}
+            {% endfor %}
+        </div>
+        <p><a href="{{ page.get_parent.url }}">Go to blogs</a></p>
+    </article>
+{% endblock content %}
