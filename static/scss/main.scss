@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
 $primary: #2e294e;
 $secondary: #1ea896;
 $third: #AFAAB9;
@@ -6,11 +8,9 @@ $width: 680px;
 
 @import "components/blog.scss";
 @import "components/nav-menu.scss";
-@import "components/font-styles.scss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
 
 * {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", ui-system, sans-serif;
   box-sizing: border-box;
 }
 
@@ -23,7 +23,6 @@ body {
 
 h1 {
   color: $primary;
-  margin-bottom: 0.325rem;
 }
 
 h2 {
@@ -33,7 +32,7 @@ h2 {
 .width {
   width: 90%;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 760px;
 }
 
 .blog-img img {
@@ -52,9 +51,9 @@ img {
 blockquote {
   background-color: #edeeef;
   margin: 0;
-  padding: 1rem;
-  border-radius: 12px;
-  border-left: 8px solid #d9d9d9;
+  padding: 1rem 1rem 0.75rem 1rem;
+  /*border-radius: 5px;*/
+  border-left: 0.75rem solid $secondary;
   font-size: 85%;
 
   & p {
@@ -63,6 +62,7 @@ blockquote {
 
   & footer {
     margin-top: 0.575em;
+    font-style: italic;
   }
 }
 

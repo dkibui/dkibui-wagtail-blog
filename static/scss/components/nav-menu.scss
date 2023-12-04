@@ -48,7 +48,6 @@
 
 .menu span {
   position: relative;
-  padding-bottom: 3px;
 }
 
 .menu a::after {
@@ -189,7 +188,7 @@
     background-color: #0C1821;
   }
 
-  .menu>a {
+  .menu> a {
     display: flex;
     justify-content: center;
     margin: 0;

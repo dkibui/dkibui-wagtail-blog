@@ -1,5 +1,11 @@
-from wagtail.blocks import (CharBlock, ListBlock, RichTextBlock, StreamBlock,
-                            StructBlock)
+from wagtail.blocks import (
+    CharBlock,
+    ListBlock,
+    RichTextBlock,
+    StreamBlock,
+    StructBlock,
+    TextBlock,
+)
 from wagtail.images.blocks import ImageChooserBlock
 
 
@@ -18,9 +24,17 @@ class QuoteBlock(StructBlock):
         template = "blocks/quote_block.html"
 
 
+class CodeBlock(StructBlock):
+    code = TextBlock()
+
+    class Meta:
+        template = "blocks/code_block.html"
+
+
 class BodyBlock(StreamBlock):
     text = RichTextBlock()
     image_carousel = ListBlock(ImageChooserBlock())
     bullet_list = ListBlock(CharBlock())
     image_with_caption = ListBlock(ImageWithCaptionBlock())
+    code = CodeBlock()
     quote = QuoteBlock()
